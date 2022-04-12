@@ -1,0 +1,28 @@
+<body>
+    <form class="center" action="/?url=info" method="post">
+        <h1>Retard à Grande Vitesse</h1>
+        <div id="input">
+            <input autocomplete="off" list="departure" id="selected_departure" class="select" name="Depart" onkeyup="changeData(event)" placeholder="Gare de départ">
+            <datalist id="departure"></datalist>
+
+            <input autocomplete="off" list="arrival" id="selected_arrival" class="select" name="Arrive" onkeyup="changeData(event)" placeholder="Gare d'arrivée">
+            <datalist id="arrival"></datalist>
+
+            <br>
+            <span id="show" onclick="show(event)">+</span>
+            <br>
+
+            <div id="hide">
+                <input autocomplete="off" list="year" id="year_arrival" class="select" onkeyup="changeData(event)" name="Annees" placeholder="Année">
+                <datalist id="year"></datalist>
+
+                <input autocomplete="off" list="month" id="month_arrival" class="select" onkeyup="changeData(event)" name="Mois" placeholder="Mois de l'année">
+                <datalist id="month"></datalist>
+            </div>
+        </div>
+        <button type="submit" value="view" onclick="view(event)" id="view">Voir les retards</button>
+    </form>
+    <a href="/?url=map"><div id="pop">Voir la carte 🚆</div></a>
+</body>
+
+<script src="/js/home.js"></script>

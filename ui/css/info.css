@@ -1,0 +1,134 @@
+@import url("/css/root.css");
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+path.slice {
+  stroke-width: 2px;
+}
+
+polyline {
+  opacity: 0.3;
+  stroke: --accent;
+  stroke-width: 2px;
+  fill: none;
+}
+
+header {
+  overflow: hidden;
+  background-color: var(--accent);
+  line-height: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+header button {
+  padding: 0 20px;
+}
+header a {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+  background-color: var(--accent);
+}
+
+#topbar {
+  height: 4em;
+  justify-content: center;
+  display: inline-flex;
+}
+#topbar > input {
+  margin-top: 1em;
+  height: 1em;
+  padding: 1em;
+  border: none;
+  margin-right: 1em;
+  margin-left: 1em;
+  border-radius: var(--radius);
+}
+#topbar > button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+  margin-right: 1em;
+  margin-left: 1em;
+  border-radius: var(--radius);
+}
+
+#visu {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25em;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  margin: 0 1em 0 1em;
+  padding-top: 1em;
+
+  background-color: var(--primary);
+}
+
+div.tooltip {
+  position: absolute;
+  z-index: 1000;
+  text-align: left;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  background-color: #000;
+  font: 12px sans-serif;
+  text-align: center;
+  line-height: 20px;
+  min-width: 140px;
+  min-height: 40px;
+}
+
+#data {
+  top: -1em;
+  position: relative;
+  margin: 0 1em 0 1em;
+  padding: 0 0.5em 1em 0.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background-color: var(--primary);
+}
+
+#delayc > p:not(.data-header),
+#delaym > p:not(.data-header),
+#datac > p:not(.data-header),
+#datam > p:not(.data-header) {
+  padding: 3px 0;
+  margin: 0;
+}
+#delayc > p.data-header,
+#delaym > p.data-header,
+#datac > p.data-header,
+#datam > p.data-header {
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 1.5em;
+  margin-bottom: 6px;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 1.4em;
+}
+.no-data h2,
+.no-data p {
+  margin: 0;
+  padding: 2em 0;
+}

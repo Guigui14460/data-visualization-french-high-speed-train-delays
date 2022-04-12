@@ -1,0 +1,117 @@
+@import url("/css/root.css");
+
+hr {
+  width: 80%;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+aside {
+  min-width: 220px;
+  margin-right: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: var(--radius);
+  position: relative;
+}
+aside .bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  margin: 1em;
+}
+
+#info {
+  margin: 1em;
+  font-size: 1.15em;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 1em;
+
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 1.25em;
+  margin: 1em;
+  color: var(--accent);
+}
+h2.line,
+li > .line {
+  color: red;
+}
+h2.station,
+li > .station {
+  color: var(--accent);
+}
+
+circle {
+  cursor: pointer;
+}
+circle.line_code {
+  z-index: 1;
+}
+circle.station {
+  z-index: 2;
+}
+
+div.tooltip {
+  position: absolute;
+  opacity: 0.8;
+  z-index: 1000;
+  text-align: left;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  background-color: #000;
+  font: 12px sans-serif;
+  text-align: center;
+  line-height: 20px;
+  pointer-events: none;
+}
+div.tooltip.line {
+  width: 120px;
+  height: 40px;
+}
+div.tooltip.station {
+  min-width: 200px;
+  min-height: 60px;
+}
+
+@keyframes slideIntop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+#pop {
+  position: absolute;
+  right: 5%;
+  background-color: var(--accent);
+  margin: 0;
+  padding: 0.5em;
+  width: 8em;
+  overflow: auto;
+  border-radius: var(--radius);
+  animation: 1s ease-out 0s 1 slideIntop;
+  text-align: center;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}

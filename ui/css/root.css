@@ -1,0 +1,11 @@
+:root {
+  --radius: 10px;
+  --accent: #0053ba;
+  --primary: whitesmoke;
+  --accentHover: #0053ba;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+}

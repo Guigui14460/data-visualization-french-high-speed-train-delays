@@ -1,0 +1,82 @@
+scalar JSON
+
+# for trains
+type Train {
+  Annees: Int!
+  Mois: Int!
+  Depart: String!
+  Arrive: String!
+  Temps_de_trajet_moyen: Float!
+  attendus: Int!
+  Annule: Int!
+  Depart_retarde: Int!
+  Retard_moyen_sur_les_depart_tardif: Float!
+  Retard_moyen_sur_tous_les_depart: Float!
+  Train_arrive_en_retard: Int!
+  Retard_moyen_sur_tous_train_en_retard: Float!
+  P_late: P_late!
+  train_en_retard_superieur_a_15_min: Int!
+  temps_moyen_des_train_en_retard_superieur_a_15_min: Float!
+  train_en_retard_superieur_a_30_min: Int!
+  train_en_retard_superieur_a_60_min: Int!
+  delay: Delay!
+}
+
+type P_late {
+  etat_de_la_ligne: Float!
+  gestion_du_trafic: Float!
+  materiel: Float!
+  gestion_de_station_et_reutilisation_de_materiel: Float!
+  passagers: Float!
+  causes_externes: Float!
+}
+
+type Delay {
+  causes_externes: Float!
+  etat_de_la_ligne: Float!
+  gestion_du_trafic: Float!
+  materiel: Float!
+  gestion_de_station_et_reutilisation_de_materiel: Float!
+  passagers: Float!
+}
+
+type Gare {
+  name: String!
+  city: String!
+  station: String!
+  geo: [Float!]!
+}
+
+# for stations
+type Station {
+  city: String!
+  geometry: Geometry!
+  uic_code: Int!
+  label: String!
+  departement: String!
+  line_code: Int!
+}
+
+type Geometry {
+  coordinates: [Float]!
+  type: String!
+}
+
+# for lines
+type Line {
+  lane_code: String!
+  line_code: Int!
+  lane_number: String!
+  geometry: Geometry!
+}
+
+type Query {
+  train(Depart: String, Arrive: String, Annees: Int, Mois: Int): [Train]
+  gare(name: String, city: String, station: String): [Gare]
+
+  stations: [Station]
+  stationByLineCode(line_code: Int): [Station]
+  lineCodesByStationCode(uic_code: Int): [Station]
+
+  lines: [Line]
+}
