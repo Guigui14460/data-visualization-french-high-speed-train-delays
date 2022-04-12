@@ -1,28 +1,42 @@
-# Site de visualisation de données
+# Data visualization site of the delays of high speed trains in France
 
-Notre site porte sur les retards des TGV (Trains à Grande Vitesse) gérés par la SNCF.
+University project proposed in the subject "Non-traditional databases" in 1st year of MSc of Computer Science at the University of Caen Normandy. The main objective was to build a data visualization site on the data of our choice. These data could be processed, rearranged in order to be inserted in MongoDB and thus, use the advantage of NoSQL databases.
+
+## Table of contents
+
+  - [Table of contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Setup](#setup)
+  - [Commands](#commands)
+  - [Pages](#pages)
+  - [Authors](#authors)
+  - [License](#license)
+
+## Introduction
+In this project supervised by [François RIOULT](https://rioultf.users.greyc.fr/drupal/welcome-francois-rioults-home-page), the main objective was to build a data visualization site on the data of our choice. These data could be processed, rearranged in order to be inserted in MongoDB and thus, use the advantage of NoSQL databases. We realized a visualization site about the delays of the TGV (High Speed Trains) managed by the SNCF.
+
 
 # Setup
-Docker doit être installé sur la machine ainsi que l'utilitaire `jq` via cette commande :
+Docker must be installed on the machine as well as the `jq` utility via this command:
 ```sh
 $ sudo apt install -y jq
 ```
 
-## Commandes
-Pour lancer la première fois notre application, veuillez suivre les commandes suivantes :
+## Commands
+To launch our application for the first time, please follow these commands:
 ```sh
 $ cd utils
 $ ./create.sh
 ```
 
-Par la suite, vous pouvez seulement réaliser ces commandes pour éviter de recréer l'image `graphql` :
+Thereafter, you can only perform these commands to avoid recreating the `graphql` image:
 ```sh
 $ pwd
 /path/to/project/root/folder/
 $ docker-compose up -d
 ```
 
-Enfin, pour couper l'application vous réaliserez les commandes suivantes :
+Finally, to shut down the application you will perform the following commands:
 ```sh
 $ pwd
 /path/to/project/root/folder/
@@ -30,9 +44,16 @@ $ docker-compose down
 ```
 
 ## Pages
-Il y a 2 pages de données et 2 pages supplémentaires.
+There are 2 data pages and 2 additional pages.
 
-Les deux pages supplémentaires sont la page d'accueil (permettant de sélectionner une ligne à étudier) et une page d'erreur quand la page demandée n'existe pas
-Les deux autres pages sont :
-- http://localhost:8000/?url=info : page montrant les informations sur les trajets sélectionnés
-- http://localhost:8000/?url=map : page montrant l'ensemble des gares et trajets sur le réseau TGV en France métropolitaine
+The two additional pages are the home page (allowing to select a line to study) and an error page when the requested page does not exist
+The two other pages are :
+- http://localhost:8000/?url=info : page showing the information about the selected routes
+- http://localhost:8000/?url=map : page showing all stations and routes on the TGV network in France
+
+## Authors
+- [PIERRE Corentin (21803752)](https://github.com/coco-ia)
+- [LETELLIER Guillaume](https://github.com/Guigui14460)
+
+## License
+Project under the "GNU General Public License v3.0" license.
