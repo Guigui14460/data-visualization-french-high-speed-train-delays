@@ -2,6 +2,12 @@
 
 Notre site porte sur les retards des TGV (Trains à Grande Vitesse) gérés par la SNCF.
 
+# Setup
+Docker doit être installé sur la machine ainsi que l'utilitaire `jq` via cette commande :
+```sh
+$ sudo apt install -y jq
+```
+
 ## Commandes
 Pour lancer la première fois notre application, veuillez suivre les commandes suivantes :
 ```sh
