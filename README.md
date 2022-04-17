@@ -52,7 +52,7 @@ The two other pages are :
 - http://localhost:8000/?url=map : page showing all stations and routes on the TGV network in France
 
 ## Authors
-- [PIERRE Corentin (21803752)](https://github.com/coco-ia)
+- [PIERRE Corentin](https://github.com/coco-ia)
 - [LETELLIER Guillaume](https://github.com/Guigui14460)
 
 ## License
